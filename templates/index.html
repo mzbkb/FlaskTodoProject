@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--展示待办项-->
+<div>
+    <h2>新增待办项</h2>
+    <div>
+        <form action="/" method="post">
+        事件描述: <input type="text" name="description"> <br>
+        到期时间: <input type="text" name="deadline"> <br>
+            <input type="submit" name="submit" value="提交">
+        </form>
+    </div>
+
+    <h2>检索待办项</h2>
+    <div>
+        <form action="/select" method="get">
+            输入关键词: <input type="search" name="keyword"> <br>
+        </form>
+    </div>
+
+    <h2>待办列表</h2>
+    {% for data in datas %}
+    <div style="background-color: #eee; margin: 10px auto;">
+        事件描述:{{ data.description }} <br/>
+        到期时间:{{ data.deadline }} <br/>
+        <a href="/edit?id={{data.id}}">修改待办</a>
+        <a href="/delete?id={{data.id}}">删除</a> <br/>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

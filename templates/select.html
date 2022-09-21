@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>查询结果</h2>
+    {% for keyword_data in keyword_datas %}
+    <div style="background-color: #eee; margin: 10px auto;">
+        事件描述:{{ keyword_data.description }} <br/>
+        到期时间:{{ keyword_data.deadline }} <br/>
+    </div>
+</div>
+
+{% endfor %}
+</body>
+</html>
